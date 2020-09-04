@@ -12,4 +12,6 @@ urlpatterns = [
     #http://localhost:8000/api/create_task/
     path('api/edit_task/<str:pk>',views.edit_task_view),
     #http://localhost:8000/api/edit_task/1
+    path('api/delete_task/<str:pk>',views.delete_task_view),
+    #http://localhost:8000/api/delete_task/1
 ]

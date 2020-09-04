@@ -22,9 +22,9 @@ function TaskContainer(){
                     "completed":false
                 })
             });
-            document.querySelector('.task-creation').children[0].value=""
+            document.querySelector('.task-creation').children[0].value="";
+            window.location.reload();
         }else{
-            console.log('hi')
             document.querySelector('.task-creation').children[0].value="enter your task here before saving..."
         };
     };

@@ -51,6 +51,12 @@ function EachTask(props){
                 });
             }}></input>
             {completed_status}
+            <input type="button" value="delete" onClick={()=>{
+                fetch(`http://localhost:8000/api/delete_task/${id}`, {
+                    method: 'DELETE'
+                });
+                window.location.reload();
+            }}></input>
         </div>
     );
 };

@@ -19,6 +19,12 @@ def show_task_view(request,pk):
 
     return Response(serializer.data)
 
+@api_view(['DELETE'])
+def delete_task_view(request,pk):
+    tasks=task.objects.get(id=pk)
+    tasks.delete()
+    return Response('deleted')
+
 @api_view(['POST'])
 def create_task_view(request):
     serializer = TaskSerializer(data=request.data)
