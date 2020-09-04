@@ -1,40 +1,56 @@
-import React,{useEffect,useState} from 'react';
+import React from 'react';
 import Fetcher from '../hooks/Fetcher';
 
 function EachTask(props){
     const id=props.id;
     const url='http://localhost:8000/api/get_task/'+id;
-
     let [response,responseChanger]=Fetcher(url);
     let task=response;
-    
+    function EditCompletedStatus(){
+        responseChanger({
+            "id":task.id,
+            "title":task.title,
+            "completed":!task.completed
+        });
+        fetch(`http://localhost:8000/api/edit_task/${id}`, {
+            method: 'PUT',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "id":task.id,
+                "title":task.title,
+                "completed":!task.completed
+            })
+        });
+    };
+    let completed_status;
+    if(task.completed){
+        completed_status=<input type="checkbox" checked onInput={EditCompletedStatus}></input>
+    }else{
+        completed_status=<input type="checkbox" unchecked={String(task.completed)} onInput={EditCompletedStatus}></input>
+    };
     return (
         <div  key={task.id} className="task">
-
             <input type="text" value={task.title} onChange={(e)=>{
-                responseChanger(
-                    {
-                        "id":task.id,
-                        "title":e.target.value,
-                        "completed":task.completed
-                    }
-                )
+                responseChanger({
+                    "id":task.id,
+                    "title":e.target.value,
+                    "completed":task.completed
+                })
             }}></input>
-
-            <input type="button" value="edit" onClick={(e)=>{
-                console.log(e.target.parentNode.children[0].value)
+            <input type="button" value="edit" onClick={()=>{
+                fetch(`http://localhost:8000/api/edit_task/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(task)
+                });
             }}></input>
-
-            <input type="checkbox" value={task.completed} onInput={()=>{
-                responseChanger(
-                    {
-                        "id":task.id,
-                        "title":task.title,
-                        "completed":!task.completed
-                    }
-                )
-            }}></input>
-
+            {completed_status}
         </div>
     );
 };
