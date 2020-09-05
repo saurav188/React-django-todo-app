@@ -1,0 +1,73 @@
+.App{
+    text-align: center;
+
+    .App-title{
+        font-weight: lighter;
+        text-shadow: 0px 0.25px 0.5px gray;
+    }
+    .tasks-container{
+        margin: 0px auto;
+        padding:1rem;
+        background-color: lightblue;
+        max-width: 25rem;
+        .task-creation,.tasks{
+            padding:0.5rem;
+
+            input[type="text"]{
+                width: 15rem;
+                height: 1.5rem;
+                padding: 0px .75rem;
+                outline: none;
+                border: none;
+                color: gray;
+                &:focus{
+                    box-shadow: 2px 2px 3px gray,
+                                -2px -2px 3px lightgray;
+                }
+            }
+            input[type="button"]{
+                background-color: white;
+                border: none;
+                outline: none;
+                width: 3rem;
+                height: 1.25rem;
+                border-radius: 5px;
+                margin-left: 1rem;
+                color: gray;
+                box-shadow: 1px 1px 3px gray,
+                            -1px -1px 3px lightgray;
+                &:active{
+                    color: lightblue;
+                }
+                
+            }
+        }
+        .tasks{
+            max-height: 60vh;
+            min-height: 60vh;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            background-color: rgb(176, 210, 221);
+            .task{
+                padding: 0.5rem;
+                border-bottom: 1px solid gray;
+                input[type="text"]{
+                    width: 10rem;
+                }
+                .edit-btn{
+                    margin-left: 0.25rem;
+                    width: 2rem;
+                }
+                .del-btn{
+                    background-color: red;
+                    color: white;
+                    width: 2rem;
+                    padding: 3.75px;
+                }
+                input[type="checkbox"]{
+                    margin:0px 0px 0px 1rem;
+                }
+            }
+        }
+    }   
+}

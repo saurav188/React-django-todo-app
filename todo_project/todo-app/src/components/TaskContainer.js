@@ -6,7 +6,7 @@ import Fetcher from '../hooks/Fetcher';
 function TaskContainer(){
     let url='http://localhost:8000/api/get_all_tasks/';
     
-    let [response,responseChanger]=Fetcher(url);
+    let [response]=Fetcher(url);
     let tasks=response;
 
     function createTask(task_title){

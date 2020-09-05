@@ -40,7 +40,7 @@ function EachTask(props){
                     "completed":task.completed
                 })
             }}></input>
-            <input type="button" value="edit" onClick={()=>{
+            <input type="button" class="edit-btn" value="edit" onClick={()=>{
                 fetch(`http://localhost:8000/api/edit_task/${id}`, {
                     method: 'PUT',
                     headers: {
@@ -51,7 +51,7 @@ function EachTask(props){
                 });
             }}></input>
             {completed_status}
-            <input type="button" value="delete" onClick={()=>{
+            <input type="button" class="del-btn" value="del" onClick={()=>{
                 fetch(`http://localhost:8000/api/delete_task/${id}`, {
                     method: 'DELETE'
                 });
