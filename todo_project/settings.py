@@ -26,7 +26,7 @@ SECRET_KEY = '*k7@r*q5cd&j9!=t4ixwnqln3#@z7bzd+_0u&(!yoyc#6hs*as'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://frozen-savannah-33670.herokuapp.com/']
+ALLOWED_HOSTS = ['frozen-savannah-33670.herokuapp.com']
 
 
 # Application definition
