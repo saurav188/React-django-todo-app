@@ -3,7 +3,7 @@ import Fetcher from '../hooks/Fetcher';
 
 function EachTask(props){
     const id=props.id;
-    const url='http://localhost:8000/api/get_task/'+id;
+    const url='https://frozen-savannah-33670.herokuapp.com/api/get_task/'+id;
     let [response,responseChanger]=Fetcher(url);
     let task=response;
     function EditCompletedStatus(){
@@ -12,7 +12,7 @@ function EachTask(props){
             "title":task.title,
             "completed":!task.completed
         });
-        fetch(`http://localhost:8000/api/edit_task/${id}`, {
+        fetch(`https://frozen-savannah-33670.herokuapp.com/api/edit_task/${id}`, {
             method: 'PUT',
             headers: {
               'Accept': 'application/json',

@@ -4,14 +4,14 @@ import Fetcher from '../hooks/Fetcher';
 
 
 function TaskContainer(){
-    let url='http://localhost:8000/api/get_all_tasks/';
+    let url='https://frozen-savannah-33670.herokuapp.com/api/get_all_tasks/';
     
     let [response]=Fetcher(url);
     let tasks=response;
 
     function createTask(task_title){
         if(task_title!==""&&task_title!=="enter your task here before saving..."){
-            fetch("http://localhost:8000/api/create_task/", {
+            fetch("https://frozen-savannah-33670.herokuapp.com/api/create_task/", {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
