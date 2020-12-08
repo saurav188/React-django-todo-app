@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'todo_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'./todo-app/build')],
+        'DIRS': [os.path.join(BASE_DIR,'./build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,7 +129,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'./todo-app/build/static')
+    os.path.join(BASE_DIR,'./build/static'),
+    os.path.join(BASE_DIR,'./build/'),
 ]
 
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
