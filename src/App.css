@@ -1,3 +1,7 @@
+body {
+  background-color: lightgray;
+}
+
 .App {
   text-align: center;
 }
@@ -10,8 +14,8 @@
 .App .tasks-container {
   margin: 0px auto;
   padding: 1rem;
-  background-color: lightblue;
-  max-width: 25rem;
+  background-color: white;
+  max-width: 80vw;
 }
 
 .App .tasks-container .task-creation, .App .tasks-container .tasks {
@@ -19,11 +23,11 @@
 }
 
 .App .tasks-container .task-creation input[type="text"], .App .tasks-container .tasks input[type="text"] {
-  width: 15rem;
-  height: 1.5rem;
+  width: 85%;
+  height: 2rem;
   padding: 0px .75rem;
   outline: none;
-  border: none;
+  border: 1px solid gray;
   color: gray;
 }
 
@@ -36,9 +40,8 @@
   background-color: white;
   border: none;
   outline: none;
-  width: 3rem;
-  height: 1.25rem;
-  border-radius: 5px;
+  width: 5rem;
+  height: 2rem;
   margin-left: 1rem;
   color: gray;
   -webkit-box-shadow: 1px 1px 3px gray, -1px -1px 3px lightgray;
@@ -52,9 +55,30 @@
 .App .tasks-container .tasks {
   max-height: 60vh;
   min-height: 60vh;
+  overflow-y: scroll;
   padding-top: 1rem;
   margin-top: 1rem;
-  background-color: #b0d2dd;
+  background-color: white;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.App .tasks-container .tasks::-webkit-scrollbar {
+  width: 10px;
+}
+
+.App .tasks-container .tasks::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.App .tasks-container .tasks::-webkit-scrollbar-thumb {
+  background: lightgray;
+}
+
+.App .tasks-container .tasks::-webkit-scrollbar-thumb:hover {
+  background: gray;
 }
 
 .App .tasks-container .tasks .task {
@@ -63,18 +87,27 @@
 }
 
 .App .tasks-container .tasks .task input[type="text"] {
-  width: 10rem;
+  width: 75%;
+  border: 0px;
+}
+
+.App .tasks-container .tasks .task input[type="text"]:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 1px solid gray;
+  -webkit-box-shadow: 0px 1px 2px gray;
+          box-shadow: 0px 1px 2px gray;
 }
 
 .App .tasks-container .tasks .task .edit-btn {
   margin-left: 0.25rem;
-  width: 2rem;
+  width: 4rem;
 }
 
 .App .tasks-container .tasks .task .del-btn {
   background-color: red;
   color: white;
-  width: 2rem;
+  width: 3rem;
   padding: 3.75px;
 }
 

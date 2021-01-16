@@ -40,7 +40,7 @@ function EachTask(props){
                     "completed":task.completed
                 })
             }}></input>
-            <input type="button" class="edit-btn" value="edit" onClick={()=>{
+            <input type="button" class="edit-btn" value="Edit" onClick={()=>{
                 fetch(`https://frozen-savannah-33670.herokuapp.com/api/edit_task/${id}`, {
                     method: 'PUT',
                     headers: {
@@ -51,7 +51,7 @@ function EachTask(props){
                 });
             }}></input>
             {completed_status}
-            <input type="button" class="del-btn" value="del" onClick={()=>{
+            <input type="button" class="del-btn" value="Del" onClick={()=>{
                 fetch(`https://frozen-savannah-33670.herokuapp.com/api/delete_task/${id}`, {
                     method: 'DELETE'
                 });

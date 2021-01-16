@@ -31,7 +31,7 @@ function TaskContainer(){
     return(
         <div className="tasks-container">
             <div className="task-creation">
-                <input type="text" placeholder="task here"></input>
+                <input type="text" placeholder="Task Here"></input>
                 <input type="button" value="Save" onClick={(e)=>createTask(e.target.parentNode.children[0].value)}></input>
             </div>
             <div className="tasks">
